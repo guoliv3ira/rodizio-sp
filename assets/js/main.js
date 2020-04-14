@@ -1,8 +1,11 @@
 //loadscreen
 
 window.addEventListener("load", (e) =>{
-  const loading = document.querySelector('.loading')
-  loading.classList.add('hidden')
+  setTimeout(function(){
+    const loading = document.querySelector('.loading')
+  loading.classList.add('hidden');
+}, 3000);
+  
   
 })
 
