@@ -12,18 +12,18 @@ window.addEventListener("load", (e) =>{
 
 // Capturar evento de submit do formulário
 const form = document.querySelector('#formulario');
-const inputPlaca = document.querySelector('#placa');
-const inputDate = document.querySelector('#date');
-const tipoPlaca = document.querySelector('#tipoPlaca')
-const verificaData = document.querySelector('#verificaData')
-const Placa = inputPlaca.value;
-const DataText = inputDate.value
-const Data = new Date(DataText);
-const diaSemana = Data.getDay();
 
 //quando clicar no botão verificar
 form.addEventListener('submit', function (e) {
   e.preventDefault();
+  const inputPlaca = e.target.querySelector('#placa');
+  const inputDate = e.target.querySelector('#date');
+  const tipoPlaca = document.querySelector('#tipoPlaca')
+  const verificaData = document.querySelector('#verificaData')
+  const Placa = inputPlaca.value;
+  const DataText = inputDate.value
+  const Data = new Date(DataText);
+  const diaSemana = Data.getDay();
   
 
   //validar o modelo de placa
@@ -35,11 +35,13 @@ form.addEventListener('submit', function (e) {
     if (!DataText){
       verificaData.innerHTML = 'Insira uma Data'
       verificaData.classList.add('invalida')
+      tipoPlaca.innerHTML = 'antigo'
+      tipoPlaca.classList.remove('invalida')
       setResultado('')
     }
     else{
       verificaRod(Placa,diaSemana)
-      tipoPlaca.innerHTML = 'antigo'
+      tipoPlaca.innerHTML = 'antigo'      
       tipoPlaca.classList.remove('invalida')
       verificaData.innerHTML = ''
     }
@@ -49,6 +51,8 @@ form.addEventListener('submit', function (e) {
     if (!DataText){
       verificaData.innerHTML = 'Insira uma Data'
       verificaData.classList.add('invalida')
+      tipoPlaca.innerHTML = 'padrão Mercosul'
+      tipoPlaca.classList.remove('invalida')
       setResultado('')
     }
     else{
