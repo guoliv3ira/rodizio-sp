@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rodízio</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+<div class="loading">
+  <img class="gif" src="assets/img/loading.gif">
+</div>
+  <section class="container">
+    <div class="logos row">
+      <div class="governo col-sm mx-auto text-center"><img class="img-reponsive" src="assets/img/sp.jpg"></div>
+      <div class="sptrans col-sm mx-auto text-center"><img class="img-reponsive" src="assets/img/sptrans.png" ></div>
+    </div>
+    <h1>Confira se seu carro está no Rodízio Municipal de São Paulo</h1>
+    <form action="/" id="formulario" method="POST">
+      <label for="placa">Placa (apenas letras e números):</label>
+      <input type="text" id="placa" name="placa" placeholder="Ex: AAA0000 ou AAA0A00" maxlength="7">
+      <p> Modelo da placa: <span id="tipoPlaca"></span></p>
+      <label for="date">Data:</label>
+      <input type="date" id="date" name="data">
+      <p id="verificaData"></p>
+      <button type="submit">Verificar</button>
+    </form>
+
+    <div id="resultado"> <p></p></div>
+  </section>
+
+  <script src="./assets/js/main.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
